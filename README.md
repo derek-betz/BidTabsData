@@ -168,7 +168,7 @@ def fetch_bidtabsdata():
     
     request = urllib.request.Request(download_url)
     if github_token:
-        request.add_header('Authorization', f'token {github_token}')
+        request.add_header('Authorization', f'Bearer {github_token}')
     
     try:
         with urllib.request.urlopen(request) as response:
@@ -321,7 +321,10 @@ python tools/create_release_zip.py --version v2024-12-26
 
 Options:
 - `--version`: Release version tag (e.g., v2024-12-26)
-- `--validate`: Validate directory structure before creating zip
+- `--output`: Output zip file path (default: BidTabsData-{version}.zip)
+- `--data-dir`: Path to data directory (default: data)
+
+Note: The script always validates the data directory structure before creating the zip.
 
 See `tools/create_release_zip.py --help` for more details.
 

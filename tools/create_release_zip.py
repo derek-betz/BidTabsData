@@ -7,7 +7,7 @@ distribution as a GitHub Release asset.
 
 Usage:
     python create_release_zip.py --version v2024-12-26
-    python create_release_zip.py --version v2024-12-26 --validate
+    python create_release_zip.py --version v2024-12-26 --output /tmp/release.zip
 """
 
 import argparse
@@ -82,7 +82,7 @@ def main():
         epilog="""
 Examples:
   python create_release_zip.py --version v2024-12-26
-  python create_release_zip.py --version v2024-12-26 --validate
+  python create_release_zip.py --version v2024-12-26 --output /tmp/release.zip
   python create_release_zip.py --version v2024-12-26 --output /tmp/release.zip
         """
     )
@@ -91,12 +91,6 @@ Examples:
         "--version",
         required=True,
         help="Release version tag (e.g., v2024-12-26)"
-    )
-    
-    parser.add_argument(
-        "--validate",
-        action="store_true",
-        help="Validate directory structure before creating zip"
     )
     
     parser.add_argument(
@@ -130,13 +124,12 @@ Examples:
     print(f"Output file: {output_file}")
     print()
     
-    # Validate if requested
-    if args.validate or True:  # Always validate
-        print("Validating data directory structure...")
-        if not validate_structure(data_dir):
-            print("\nValidation failed. Exiting.")
-            sys.exit(1)
-        print("Validation passed.\n")
+    # Always validate (validation is important for release integrity)
+    print("Validating data directory structure...")
+    if not validate_structure(data_dir):
+        print("\nValidation failed. Exiting.")
+        sys.exit(1)
+    print("Validation passed.\n")
     
     # Create the zip file
     print("Creating release zip file...")
