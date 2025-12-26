@@ -44,6 +44,7 @@ logs/
 *.tmp
 temp/
 tmp/
+artifacts/
 
 # Excel temporary files
 ~$*.xls*
