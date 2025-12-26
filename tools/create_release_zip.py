@@ -83,7 +83,7 @@ def main():
 Examples:
   python create_release_zip.py --version v2024-12-26
   python create_release_zip.py --version v2024-12-26 --output /tmp/release.zip
-  python create_release_zip.py --version v2024-12-26 --output /tmp/release.zip
+  python create_release_zip.py --version v2024-12-26 --data-dir custom/data
         """
     )
     
