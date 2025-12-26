@@ -243,10 +243,10 @@ This project depends on BidTabsData releases for sample/test data.
 
 Set the version and run the fetch script:
 
-```bash
+bash
 export BIDTABSDATA_VERSION=v2024-12-26
 python scripts/fetch_bidtabsdata.py
-```
+
 
 The data will be downloaded to `data-sample/BidTabsData/`.
 ```
