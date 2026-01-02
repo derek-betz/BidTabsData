@@ -1,0 +1,4 @@
+[submodule "skills/ask-questions-if-underspecified"]
+	path = skills/ask-questions-if-underspecified
+	url = https://github.com/derek-betz/codex-skill-ask-questions-if-underspecified.git
+	branch = main
