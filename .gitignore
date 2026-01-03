@@ -50,3 +50,4 @@ artifacts/
 ~$*.xls*
 .~lock.*
 *.xlk
+API_KEY/

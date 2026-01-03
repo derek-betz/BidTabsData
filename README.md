@@ -337,3 +337,8 @@ See `tools/create_release_zip.py --help` for more details.
 ## License
 
 [Specify your license here]
+
+## Secrets
+
+The API_KEY/ directory is intentionally excluded from version control. Create it locally on each machine to store secrets.
+
