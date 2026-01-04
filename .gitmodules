@@ -2,3 +2,6 @@
 	path = skills/ask-questions-if-underspecified
 	url = https://github.com/derek-betz/codex-skill-ask-questions-if-underspecified.git
 	branch = main
+[submodule ".standards"]
+	path = .standards
+	url = git@github.com:derek-betz/agent-standards.git
