@@ -51,3 +51,4 @@ artifacts/
 .~lock.*
 *.xlk
 API_KEY/
+.env
