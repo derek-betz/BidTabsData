@@ -57,7 +57,7 @@ gh auth login
 # Push the tag
 git push origin v2026-01-01
 
-# Create the release
+# Create the release with multi-line notes
 gh release create v2026-01-01 \
   --title "BidTabsData v2026-01-01" \
   --notes "## Contents
