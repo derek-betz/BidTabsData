@@ -52,3 +52,6 @@ artifacts/
 *.xlk
 API_KEY/
 .env
+
+# Release artifacts
+BidTabsData-*.zip
