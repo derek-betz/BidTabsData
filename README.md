@@ -342,3 +342,8 @@ See `tools/create_release_zip.py --help` for more details.
 
 The API_KEY/ directory is intentionally excluded from version control. Create it locally on each machine to store secrets.
 
+
+## Deterministic quick start
+- Run commands from the repo root.
+- Prefer explicit relative paths (for example: `./scripts/...`).
+- Use copy/paste-ready examples with concrete file paths.
