@@ -4,4 +4,4 @@
 	branch = main
 [submodule ".standards"]
 	path = .standards
-	url = git@github.com:derek-betz/agent-standards.git
+	url = git@github.com:derek-betz/codex-skills.git
