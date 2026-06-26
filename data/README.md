@@ -1,11 +1,17 @@
 # Data Directory
 
-This directory contains the BidTabs .xls data files.
+This directory contains BidTabsData exports.
 
 ## Contents
 
-BidTabs .xls files will be stored here and versioned through Git. These files will be packaged and distributed via GitHub Releases for consuming repositories.
+Historical files are legacy BidTabs/Oman `.xls` exports. New macOS-friendly
+public INDOT pulls are stored as `.csv` files generated from public Unit Tab
+Results PDFs.
 
 ## File Format
 
-Files should be in .xls (Excel) format containing BidTabs data.
+Legacy `.xls` files keep the original 21 BidTabsData columns. New public `.csv`
+files keep those columns and append `DistrictIDs` and `DistrictNames`.
+
+For new consumers, `DistrictIDs` is the authoritative district-membership field.
+`Region` remains a single legacy numeric value for backward compatibility.

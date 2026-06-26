@@ -45,6 +45,7 @@ logs/
 temp/
 tmp/
 artifacts/
+.bidtabs-cache/
 
 # Excel temporary files
 ~$*.xls*

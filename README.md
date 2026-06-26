@@ -1,12 +1,12 @@
 # BidTabsData
 
-Shared versioned dataset of BidTabs .xls files distributed via GitHub Releases for consuming repos.
+Shared versioned dataset of BidTabs `.xls` and public INDOT `.csv` files distributed via GitHub Releases for consuming repos.
 
 ## Purpose
 
-This repository serves as a centralized location for versioned BidTabs data files exported from the BidTabs system. The primary goals are:
+This repository serves as a centralized location for versioned BidTabs data files. Historical files came from the BidTabs/Oman export path; the proposed/default path going forward is the public INDOT Unit Tab Results PDF puller in `tools/indot_public_bidtabs_puller.py`. The primary goals are:
 
-- **Single Source of Truth**: Maintain all BidTabs .xls exports in one repository
+- **Single Source of Truth**: Maintain BidTabsData exports in one repository
 - **Version Control**: Track changes to data files over time with Git
 - **Reliable Distribution**: Provide versioned releases for consuming repositories to depend on specific data snapshots
 - **Reproducibility**: Enable consuming projects to pin specific data versions for consistent builds and testing
@@ -26,11 +26,24 @@ BidTabsData/
 
 ### Recommended Structure Under `data/`
 
-Organize your .xls files logically within the `data/` directory:
+Organize BidTabsData files logically within the `data/` directory:
 
 - **By Project**: `data/ProjectName/BidTabs_Export.xls`
-- **By Date**: `data/2024-01/BidTabs_Export.xls`
+- **By Date**: `data/2026-05-07.csv`
 - **By Category**: `data/erosion-control/BidTabs_Export.xls`
+
+## Updating Data
+
+Use the public INDOT puller by default:
+
+```bash
+tools/indot_public_bidtabs_puller.py weekly --output-dir data/BidTabsData
+git status --short
+```
+
+The public CSV schema keeps the legacy BidTabsData columns and appends
+`DistrictIDs` and `DistrictNames`. New consumers should use `DistrictIDs` for
+district membership; `Region` remains a single legacy numeric value.
 
 Choose a structure that best fits your workflow. Consuming repositories will receive the entire `data/` directory contents.
 
